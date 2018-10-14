@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="资料\第1周绪论第7讲-小结.pptx" />
+    <None Include="资料\第1章绪论第1讲-数据结构总览.pptx" />
+    <None Include="资料\第1章绪论第2讲-什么是数据结构.pptx" />
+    <None Include="资料\第1章绪论第3讲-数据结构求解问题的过程.pptx" />
+    <None Include="资料\第1章绪论第4讲-算法及其描述.pptx" />
+    <None Include="资料\第1章绪论第5讲-算法分析基础.pptx" />
+    <None Include="资料\第1章绪论第6讲-其他情况的算法分析.pptx" />
+    <None Include="资料\第2章线性表第11讲-有序表.pptx" />
+    <None Include="资料\第2章线性表第12讲-小结(2).pptx" />
+    <None Include="资料\第2章线性表第1讲-线性表的基本概念.pptx" />
+    <None Include="资料\第2章线性表第2讲-线性表的顺序存储结构.pptx" />
+    <None Include="资料\第2章线性表第3讲-顺序表算法设计.pptx" />
+    <None Include="资料\第2章线性表第4讲-单链表.pptx" />
+    <None Include="资料\第2章线性表第5讲-单链表的算法设计.pptx" />
+    <None Include="资料\第2章线性表第6讲-小结(1).pptx" />
+    <None Include="资料\第2章线性表第7讲-双链表.pptx" />
+    <None Include="资料\第2章线性表第8讲-循环链表.pptx" />
+    <None Include="资料\第2章线性表第9讲-线性表的应用.pptx" />
+    <None Include="资料\第3章栈和队列第1讲-栈的定义和顺序栈.pptx" />
+    <None Include="资料\第3章栈和队列第2讲-链栈.pptx" />
+    <None Include="资料\第3章栈和队列第3讲-栈的应用-求简单表达式值.pptx" />
+    <None Include="资料\第3章栈和队列第4讲-栈的应用-用栈求迷宫问题 .pptx" />
+    <None Include="资料\第3章栈和队列第5讲-队列的定义和顺序队.pptx" />
+    <None Include="资料\第3章栈和队列第6讲-链队.pptx" />
+    <None Include="资料\第3章栈和队列第7讲-队列的应用-求解迷宫问题.pptx" />
+    <None Include="资料\第3章栈和队列第8讲-小结.pptx" />
+    <None Include="资料\第4章串第1讲-串的概念和存储结构.pptx" />
+    <None Include="资料\第4章串第2讲-串的模式匹配.pptx" />
+    <None Include="资料\第4章串第3讲-小结.pptx" />
+    <None Include="资料\第5章递归第1讲-什么是递归.pptx" />
+    <None Include="资料\第5章递归第2讲-递归算法的设计.pptx" />
+    <None Include="资料\第5章递归第3讲-小结.pptx" />
+    <None Include="资料\第6章数组和广义表第1讲-数组.pptx" />
+    <None Include="资料\第6章数组和广义表第2讲-稀疏矩阵.pptx" />
+    <None Include="资料\第6章数组和广义表第3讲-广义表.pptx" />
+    <None Include="资料\第6章数组和广义表第4讲-小结.pptx" />
+    <None Include="资料\第7章树和二叉树第10讲-哈夫曼树.pptx" />
+    <None Include="资料\第7章树和二叉树第11讲-并查集.pptx" />
+    <None Include="资料\第7章树和二叉树第12讲-小结(2).pptx" />
+    <None Include="资料\第7章树和二叉树第1讲-树的概念.pptx" />
+    <None Include="资料\第7章树和二叉树第2讲-树的运算和存储结构.pptx" />
+    <None Include="资料\第7章树和二叉树第3讲-二叉树的概念.pptx" />
+    <None Include="资料\第7章树和二叉树第4讲-二叉树的存储结构.pptx" />
+    <None Include="资料\第7章树和二叉树第5讲-二叉树基本运算及其实现.pptx" />
+    <None Include="资料\第7章树和二叉树第6讲-小结(1).pptx" />
+    <None Include="资料\第7章树和二叉树第7讲-二叉树的遍历.pptx" />
+    <None Include="资料\第7章树和二叉树第8讲- 线索二叉树.pptx" />
+    <None Include="资料\第7章树和二叉树第9讲-二叉树的构造.pptx" />
+    <None Include="资料\第8章图第10讲-拓扑排序.pptx" />
+    <None Include="资料\第8章图第11讲-求关键路径.pptx" />
+    <None Include="资料\第8章图第12讲-小算法解决大问题.pptx" />
+    <None Include="资料\第8章图第13讲-小结（2）.pptx" />
+    <None Include="资料\第8章图第1讲-图的概念.pptx" />
+    <None Include="资料\第8章图第2讲-图的存储结构.pptx" />
+    <None Include="资料\第8章图第3讲-图的遍历.pptx" />
+    <None Include="资料\第8章图第4讲-图遍历的应用.pptx" />
+    <None Include="资料\第8章图第5讲-小结（1）.pptx" />
+    <None Include="资料\第8章图第6讲-最小生成树和Pim算法.pptx" />
+    <None Include="资料\第8章图第7讲-求最小生成树的Kruskal算法.pptx" />
+    <None Include="资料\第8章图第8讲-最短路径和Dijkstra算法.pptx" />
+    <None Include="资料\第8章图第9讲-求最短路径的Floyd算法.pptx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="第二章 线性表.c" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{D721FC3F-1A41-4D51-A1B5-4889CDDBF8AC}</ProjectGuid>
+    <RootNamespace>数据结构教程</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
