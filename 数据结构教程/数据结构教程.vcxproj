@@ -82,7 +82,7 @@
     <None Include="资料\第8章图第9讲-求最短路径的Floyd算法.pptx" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="第二章 线性表.c" />
+    <ClCompile Include="第二章 线性表.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
