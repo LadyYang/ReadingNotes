@@ -148,7 +148,7 @@ int LocateElem(SqList * L, ElemType e) {
 }
 
 // 插入数据元素
-bool ListInsert(SqList * &L, int i, ElemType e) {
+bool ListI76nsert(SqList * &L, int i, ElemType e) {
 	int j;
 
 	if (i < 1 || i > L->length + 1)

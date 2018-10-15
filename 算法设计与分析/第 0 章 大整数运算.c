@@ -6,14 +6,14 @@
 
 /*
 *
-* Àı1 ¼ÆËã n! (nÎª·Ç¸ºÕûÊı)
+* ä¾‹1 è®¡ç®— n! (nä¸ºéè´Ÿæ•´æ•°)
 *
 */
 
-// ÇéĞÎÒ»: µ±nµÄ¹æÄ£½ÏĞ¡µÄÊ±ºò (n < 13)Ê±
+// æƒ…å½¢ä¸€: å½“nçš„è§„æ¨¡è¾ƒå°çš„æ—¶å€™ (n < 13)æ—¶
 void test01() {
 	int n;
-	printf("ÇëÊäÈën (n < 13)Çó n! ");
+	printf("è¯·è¾“å…¥n (n < 13)æ±‚ n! ");
 	scanf("%d", &n);
 
 	unsigned long long s = 1;
@@ -27,22 +27,22 @@ void test01() {
 
 
 #define N 1024*10
-// ÇéĞÎ¶ş: µ±nµÄ¹æÄ£½Ï´óµÄÊ±ºò
+// æƒ…å½¢äºŒ: å½“nçš„è§„æ¨¡è¾ƒå¤§çš„æ—¶å€™
 void test02() {
-	// nµÄ¹æÄ£½Ï´ó£¬ n!µÄÎ»ÊıÒ²¾ÍÏàÓ¦µÄ´ó£¬Éè¼ÆÊı×éa[]´æ´¢n!µÄ¸÷Î»Êı×Ö£¬ a[1]´æ´¢¸÷Î»Êı×Ö£¬a[2]´æ´¢Ê®Î»Êı×Ö,ÒÔ´ËÀàÍÆ¡£
-	// nÈ·¶¨ºó n!µÄÎ»Êı m Ò²¾ÍÈ·¶¨ÁË, ÓĞ£º
+	// nçš„è§„æ¨¡è¾ƒå¤§ï¼Œ n!çš„ä½æ•°ä¹Ÿå°±ç›¸åº”çš„å¤§ï¼Œè®¾è®¡æ•°ç»„a[]å­˜å‚¨n!çš„å„ä½æ•°å­—ï¼Œ a[1]å­˜å‚¨å„ä½æ•°å­—ï¼Œa[2]å­˜å‚¨åä½æ•°å­—,ä»¥æ­¤ç±»æ¨ã€‚
+	// nç¡®å®šå n!çš„ä½æ•° m ä¹Ÿå°±ç¡®å®šäº†, æœ‰ï¼š
 	/*
-		  10m-1 ¡Ü n! ¡Ü10m-1<10m
-                    m-1 ¡Ülgn!<m
-                    m-1 ¡Ü lg2+lg3+¡­+lgn <m
-         Áîs=lg2+lg3+¡­+lgn£¬Ôòn!µÄÎ»Êım=[s]+1£¬¼´ÒªÊ¹ÓÃÊı×éa[]µÄm¸öÔªËØ¡£
+		  10m-1 â‰¤ n! â‰¤10m-1<10m
+                    m-1 â‰¤lgn!<m
+                    m-1 â‰¤ lg2+lg3+â€¦+lgn <m
+         ä»¤s=lg2+lg3+â€¦+lgnï¼Œåˆ™n!çš„ä½æ•°m=[s]+1ï¼Œå³è¦ä½¿ç”¨æ•°ç»„a[]çš„mä¸ªå…ƒç´ ã€‚
 
 	*/
 	int n;
-	printf("ÇëÊäÈën Çó n! ");
+	printf("è¯·è¾“å…¥n æ±‚ n! ");
 	scanf("%u", &n);
 
-	//Çó n! µÄÎ»Êım
+	//æ±‚ n! çš„ä½æ•°m
 	double s = 0;
 	for (int i = 2; i <= n; i++) {
 		s += log10(i);
@@ -71,45 +71,45 @@ void test02() {
 
 /*******************************
 *
-* Àı2 ³¬³¤ÕûÊıÔËËã£¨´óÊıÔËËã£©
+* ä¾‹2 è¶…é•¿æ•´æ•°è¿ç®—ï¼ˆå¤§æ•°è¿ç®—ï¼‰
 * 
 *
 ********************************/
 
 
 /**
-* Description£º
-*	ÎÒÃÇ½«¼Ó·¨µÄÇé¿ö·ÖÎªÁËËÄÖÖ
-*		£¨1£©Á½¸ö³¤¶ÈÏàµÈµÄÊıÏà¼Ó
-*		£¨2£©Á½¸ö³¤¶È²»ÏàµÈµÄÊıÏà¼Ó
+* Descriptionï¼š
+*	æˆ‘ä»¬å°†åŠ æ³•çš„æƒ…å†µåˆ†ä¸ºäº†å››ç§
+*		ï¼ˆ1ï¼‰ä¸¤ä¸ªé•¿åº¦ç›¸ç­‰çš„æ•°ç›¸åŠ 
+*		ï¼ˆ2ï¼‰ä¸¤ä¸ªé•¿åº¦ä¸ç›¸ç­‰çš„æ•°ç›¸åŠ 
 * 
-* ²ÉÓÃµİ¹éµÄ·½Ê½£¬³ö¿ÚÌõ¼ş¾ÍÊÇÁ½¸öÏàµÈµÄÊıÏà¼Ó £¡£¡£¡
-*  Àı£º32455	       55
+* é‡‡ç”¨é€’å½’çš„æ–¹å¼ï¼Œå‡ºå£æ¡ä»¶å°±æ˜¯ä¸¤ä¸ªç›¸ç­‰çš„æ•°ç›¸åŠ  ï¼ï¼ï¼
+*  ä¾‹ï¼š32455	       55
 *     +   43   ==>   + 43  
-* ÓÃÒ»¸öÊı×é±£´æ¶àÓà³öÀ´µÄ 324, ÓÃÁíÒ»¸öÊı×é±£´æÏà¼Ó½á¹ûµÄ½øÎ»Öµ
-* È»ºóµ÷ÓÃ add([3,2,4], 3, [0], 1, 0)
-* µİ¹éÏÂÈ¥......
+* ç”¨ä¸€ä¸ªæ•°ç»„ä¿å­˜å¤šä½™å‡ºæ¥çš„ 324, ç”¨å¦ä¸€ä¸ªæ•°ç»„ä¿å­˜ç›¸åŠ ç»“æœçš„è¿›ä½å€¼
+* ç„¶åè°ƒç”¨ add([3,2,4], 3, [0], 1, 0)
+* é€’å½’ä¸‹å»......
 */
-// ·½Ê½Ò»
+// æ–¹å¼ä¸€
 //void add(int *a, int a_len, int *b, int b_len, int *c, int *c_len) {
 //
-//	// ½á¹ûÊı×éµÄ³¤¶È
+//	// ç»“æœæ•°ç»„çš„é•¿åº¦
 //	int result_len = 0;
 //
-//	// ±£´æ½á¹ûµÄÊı×é
+//	// ä¿å­˜ç»“æœçš„æ•°ç»„
 //	int result[1024] = { 0 };
 //
-//	// ½øÎ»Öµ
+//	// è¿›ä½å€¼
 //	int carry = 0;
 //
-//	// È¡Á½Êı×îĞ¡µÄ³¤¶È
+//	// å–ä¸¤æ•°æœ€å°çš„é•¿åº¦
 //	int min = 0;
 //
-//	// Á½ÊıÏà²îÎ»ÊıµÄ¸öÊı
+//	// ä¸¤æ•°ç›¸å·®ä½æ•°çš„ä¸ªæ•°
 //	int distance = abs(a_len - b_len);
 //
 //
-//	// ±£´æÏà²îÎ»ÊıµÄÊı×é
+//	// ä¿å­˜ç›¸å·®ä½æ•°çš„æ•°ç»„
 //	int array_dis[1024] = { 0 };
 //	if (a_len > b_len) {
 //		min = b_len;
@@ -126,7 +126,7 @@ void test02() {
 //		}
 //	}
 //
-//	// ÊµÏÖ¼Ó·¨ÔËËã
+//	// å®ç°åŠ æ³•è¿ç®—
 //	for (int i = 0; i < min; i++) {
 //		result[min - i - 1] = a[a_len - i - 1] + b[b_len - i - 1] + carry;
 //		carry = result[min - i - 1] / 10;
@@ -135,7 +135,7 @@ void test02() {
 //
 //	if (distance == 0) {
 //
-//		// ÅĞ¶ÏÊÇ·ñ²úÉú½øÎ»Öµ
+//		// åˆ¤æ–­æ˜¯å¦äº§ç”Ÿè¿›ä½å€¼
 //		if (carry != 0) {
 //			c[0] = carry;
 //			result_len++;
@@ -166,7 +166,7 @@ void test02() {
 //			}
 //		}
 //
-//		// current_len ´ú±íµ±Ç°c[] Êı×éµÄ³¤¶È !!!
+//		// current_len ä»£è¡¨å½“å‰c[] æ•°ç»„çš„é•¿åº¦ !!!
 //		int current_len = result_len;
 //		for (int i = current_len; i < min + current_len; i++) {
 //			c[i] = result[i - current_len];
@@ -177,23 +177,23 @@ void test02() {
 //	*c_len = result_len;
 //}
 
-// ·½Ê½¶ş
+// æ–¹å¼äºŒ
 //void add(int *a, int a_len, int *b, int b_len, int *c, int *c_len) {
 //	if (a == NULL || b == NULL || c == NULL)
 //		return;
 //
-//	// Ïà²îµÄÎ»Êı±£´æÔÚdiffer_array ÖĞ
+//	// ç›¸å·®çš„ä½æ•°ä¿å­˜åœ¨differ_array ä¸­
 //	int differ_array[1024] = { 0 };
 //	int carry[1] = { 0 };
 //
-//	// ±£´æÏà¼Ó½á¹û
+//	// ä¿å­˜ç›¸åŠ ç»“æœ
 //	int result_array[1024] = { 0 };
 //	int result_len = 0;
 //
-//	// È¡Á½Êı×îĞ¡µÄ³¤¶È
+//	// å–ä¸¤æ•°æœ€å°çš„é•¿åº¦
 //	int min = 0;
 //
-//	// Á½ÊıÏà²îÎ»ÊıµÄ¸öÊı
+//	// ä¸¤æ•°ç›¸å·®ä½æ•°çš„ä¸ªæ•°
 //	int distance = abs(a_len - b_len);
 //
 //	if (a_len > b_len) {
@@ -211,7 +211,7 @@ void test02() {
 //		}
 //	}
 //
-//	// ¼Ó·¨ÔËËã
+//	// åŠ æ³•è¿ç®—
 //	for (int i = 0; i < min; i++) {
 //		result_array[min - i - 1] = a[a_len - i - 1] + b[b_len - i - 1] + carry[0];
 //		carry[0] = result_array[min - i - 1] / 10;
@@ -249,14 +249,14 @@ void test02() {
 //		*c_len = result_len;
 //}
 
-// Ê¹ a, bÁ½Êı³¤¶ÈÏàµÈ   ÓÃ 0 ²¹Æë
+// ä½¿ a, bä¸¤æ•°é•¿åº¦ç›¸ç­‰   ç”¨ 0 è¡¥é½
 void make_len_equal(int *in_a, int a_len, int *in_b, int b_len, int *out_a, int *out_b, int *out_len) {
 
 	*out_len = 0;
 
 	int distance = abs(a_len - b_len);
 
-	// ½«Á½Êı³¤¶È¸ÄÎªÏàµÈ
+	// å°†ä¸¤æ•°é•¿åº¦æ”¹ä¸ºç›¸ç­‰
 	if (a_len > b_len) {
 		*out_len = a_len;
 
@@ -287,8 +287,8 @@ void make_len_equal(int *in_a, int a_len, int *in_b, int b_len, int *out_a, int 
 	}
 }
 
-// ·½Ê½Èı Final Version
-// ¶¼×ª»»³ÉÏàµÈ³¤¶ÈµÄÁ½¸öÊıÏà¼Ó
+// æ–¹å¼ä¸‰ Final Version
+// éƒ½è½¬æ¢æˆç›¸ç­‰é•¿åº¦çš„ä¸¤ä¸ªæ•°ç›¸åŠ 
 void add(int *a, int a_len, int *b, int b_len, int *c, int *c_len) {
 
 	int first_number[1024] = { 0 };
@@ -301,7 +301,7 @@ void add(int *a, int a_len, int *b, int b_len, int *c, int *c_len) {
 
 	make_len_equal(a, a_len, b, b_len, first_number, second_number, &length);
 
-	// ¼Ó·¨ÔËËã
+	// åŠ æ³•è¿ç®—
 	int carry = 0;
 	for (int i = length - 1; i >= 0; i--) {
 		result_array[i] = first_number[i] + second_number[i] + carry;
@@ -329,25 +329,25 @@ void add(int *a, int a_len, int *b, int b_len, int *c, int *c_len) {
 }
 
 // return 0 is minus, return others is positive number
-// ·½Ê½Ò» ÒÔÏàµÈÓë²»ÏàµÈÀ´»®·Ö
+// æ–¹å¼ä¸€ ä»¥ç›¸ç­‰ä¸ä¸ç›¸ç­‰æ¥åˆ’åˆ†
 //int sub(int *a, int a_len, int *b, int b_len, int *c, int *c_len) {
 //	if (a == NULL || b == NULL || c == NULL)
 //		return;
 //
 //	int flag = 1;
 //
-//	// Ïà²îµÄÎ»Êı±£´æÔÚdiffer_array ÖĞ
+//	// ç›¸å·®çš„ä½æ•°ä¿å­˜åœ¨differ_array ä¸­
 //	int differ_array[1024] = { 0 };
 //	int borrow[1] = { 0 };
 //
-//	// ±£´æÏà¼Ó½á¹û
+//	// ä¿å­˜ç›¸åŠ ç»“æœ
 //	int result_array[1024] = { 0 };
 //	int result_len = 0;
 //
-//	// È¡Á½Êı×îĞ¡µÄ³¤¶È
+//	// å–ä¸¤æ•°æœ€å°çš„é•¿åº¦
 //	int min = 0;
 //
-//	// Á½ÊıÏà²îÎ»ÊıµÄ¸öÊı
+//	// ä¸¤æ•°ç›¸å·®ä½æ•°çš„ä¸ªæ•°
 //	int distance = abs(a_len - b_len);
 //
 //	if (a_len > b_len) {
@@ -366,7 +366,7 @@ void add(int *a, int a_len, int *b, int b_len, int *c, int *c_len) {
 //		}
 //	}
 //
-//	// ¼õ·¨ÔËËã
+//	// å‡æ³•è¿ç®—
 //	for (int i = 0; i < min; i++) {
 //		result_array[min - i - 1] = a[a_len - i - 1] - b[b_len - i - 1] - borrow[0];
 //
@@ -388,7 +388,7 @@ void add(int *a, int a_len, int *b, int b_len, int *c, int *c_len) {
 //				result_len++;
 //			}
 //
-//			// ½«c[0] = 0 Õâ¸öÊıÒ»Ö± È¥³ı: a[] = {0, 0, 1} ==>  a[] = {1}
+//			// å°†c[0] = 0 è¿™ä¸ªæ•°ä¸€ç›´ å»é™¤: a[] = {0, 0, 1} ==>  a[] = {1}
 //			while (c[0] == 0) {
 //				for (int i = 0; i < min - 1; i++) {
 //					c[i] = c[i + 1];
@@ -442,30 +442,30 @@ void add(int *a, int a_len, int *b, int b_len, int *c, int *c_len) {
 
 // Final Version
 /**
-* Description£º
-* ÒÔÏàµÈÊıÀ´»®·Ö  ×îÂúÒâµÄ£¡£¡£¡
+* Descriptionï¼š
+* ä»¥ç›¸ç­‰æ•°æ¥åˆ’åˆ†  æœ€æ»¡æ„çš„ï¼ï¼ï¼
 * 
-*	ÎÒÃÇ½«¼õ·¨µÄÇé¿ö·ÖÎªÁËÁ½ÖÖ
-*		£¨1£©Á½¸ö³¤¶ÈÏàµÈµÄÊıÏà¼õ
-*		£¨2£©Á½¸ö³¤¶È²»ÏàµÈµÄÊıÏà¼õ
-* ÎÒÃÇ½«Á½Êı³¤¶ÈÉèÖÃ³ÉÏàµÈ
-* Àı£º 3112         3112
+*	æˆ‘ä»¬å°†å‡æ³•çš„æƒ…å†µåˆ†ä¸ºäº†ä¸¤ç§
+*		ï¼ˆ1ï¼‰ä¸¤ä¸ªé•¿åº¦ç›¸ç­‰çš„æ•°ç›¸å‡
+*		ï¼ˆ2ï¼‰ä¸¤ä¸ªé•¿åº¦ä¸ç›¸ç­‰çš„æ•°ç›¸å‡
+* æˆ‘ä»¬å°†ä¸¤æ•°é•¿åº¦è®¾ç½®æˆç›¸ç­‰
+* ä¾‹ï¼š 3112         3112
       -  32  =>  -  0032
 
 	    124		   00124
 	 -32454  =>  - 32454
 
-	 ×ª»»³ÉÕâÖÖĞÎÊ½Ö®ºó ÎÒÃÇ¾Í°´ÕÕ¼õ·¨µÄÔËËã·¨Ôò ½øĞĞÏà¼õ   
-	 ×îºóÎÒÃÇÖ»ÒªÅĞ¶Ï  Ïà¼õÖ®ºóÎÒÃÇÒªÅĞ¶Ï borrow[0] == 1 ? 
-	 £¨1£©Èç¹ûÎª 0 ÔòËµÃ÷Ïà¼õ½á¹ûÎªÕıÊı º¯Êı½áÊø
-	 £¨2£©Èç¹ûÎª 1 ÔòËµÃ÷Ïà¼õ½á¹ûÎª¸ºÊı£¬ ÕâÊ±ÎÒÃÇÒªÓÃÒ»¸öÊı×é£¬differ_array[]
-		  ²¢ÇÒdiffer_array[0] = 1
-		  È»ºóµ÷ÓÃ sub(differ_array, length + 1, result_array, length, c_len)
-		  ÆäÖĞ length Îª¶ş¸öÏà¼õÊıµÄ³¤¶È£¬result_array ÎªÏà¼õµÄ½á¹û£¬ c_len Îª½á¹ûµÄ³¤¶È
-* Àı£º  0032		
+	 è½¬æ¢æˆè¿™ç§å½¢å¼ä¹‹å æˆ‘ä»¬å°±æŒ‰ç…§å‡æ³•çš„è¿ç®—æ³•åˆ™ è¿›è¡Œç›¸å‡   
+	 æœ€åæˆ‘ä»¬åªè¦åˆ¤æ–­  ç›¸å‡ä¹‹åæˆ‘ä»¬è¦åˆ¤æ–­ borrow[0] == 1 ? 
+	 ï¼ˆ1ï¼‰å¦‚æœä¸º 0 åˆ™è¯´æ˜ç›¸å‡ç»“æœä¸ºæ­£æ•° å‡½æ•°ç»“æŸ
+	 ï¼ˆ2ï¼‰å¦‚æœä¸º 1 åˆ™è¯´æ˜ç›¸å‡ç»“æœä¸ºè´Ÿæ•°ï¼Œ è¿™æ—¶æˆ‘ä»¬è¦ç”¨ä¸€ä¸ªæ•°ç»„ï¼Œdiffer_array[]
+		  å¹¶ä¸”differ_array[0] = 1
+		  ç„¶åè°ƒç”¨ sub(differ_array, length + 1, result_array, length, c_len)
+		  å…¶ä¸­ length ä¸ºäºŒä¸ªç›¸å‡æ•°çš„é•¿åº¦ï¼Œresult_array ä¸ºç›¸å‡çš„ç»“æœï¼Œ c_len ä¸ºç»“æœçš„é•¿åº¦
+* ä¾‹ï¼š  0032		
       - 1123
 	-------------
-		8909    ×î¸ßÎ»Òª½è 1  ËùÒÔµ÷ÓÃ 
+		8909    æœ€é«˜ä½è¦å€Ÿ 1  æ‰€ä»¥è°ƒç”¨ 
 									   sub( differ_array,   length + 1, result_array, length, c_len)
 												|			   |			   |		  |		  |
 												|			   |			   |		  |		  |
@@ -477,7 +477,7 @@ void add(int *a, int a_len, int *b, int b_len, int *c, int *c_len) {
    -------------
 		1091	
 	
-	×îÖÕ sub() º¯Êı·µ»Ø 0£¬ ±êÖ¾ÊÇ¸ºÊı¡£ ËùÒÔ×îÖÕ½á¹ûÎª -1091
+	æœ€ç»ˆ sub() å‡½æ•°è¿”å› 0ï¼Œ æ ‡å¿—æ˜¯è´Ÿæ•°ã€‚ æ‰€ä»¥æœ€ç»ˆç»“æœä¸º -1091
 
 *
 */
@@ -487,20 +487,20 @@ int sub(int *a, int a_len, int *b, int b_len, int *c, int *c_len) {
 		
 	int flag = 1;
 
-	// ¼õÊı
+	// å‡æ•°
 	int reduction[1024] = { 0 };
 		
-	// ±»¼õÊı
+	// è¢«å‡æ•°
 	int subtrahend[1024] = { 0 };
 
-	// ±£´æÏà¼Ó½á¹û
+	// ä¿å­˜ç›¸åŠ ç»“æœ
 	int result_array[1024] = { 0 };
 	
 	int length = 0;
 
 	make_len_equal(a, a_len, b, b_len, subtrahend, reduction, &length);
 
-	// ¼õ·¨ÔËËã
+	// å‡æ³•è¿ç®—
 	int borrow = 0;
 	for (int i = length - 1; i >= 0; i--) {
 		result_array[i] = subtrahend[i] - reduction[i] - borrow;
@@ -521,14 +521,14 @@ int sub(int *a, int a_len, int *b, int b_len, int *c, int *c_len) {
 			c[i] = result_array[i];
 		}
 
-		// ½«c[0] = 0 Õâ¸öÊıÒ»Ö± È¥³ı: a[] = {0, 0, 1} ==>  a[] = {1}
+		// å°†c[0] = 0 è¿™ä¸ªæ•°ä¸€ç›´ å»é™¤: a[] = {0, 0, 1} ==>  a[] = {1}
 		int result_length = length;
 		while (c[0] == 0) {
 			for (int i = 0; i < result_length - 1; i++) {
 				c[i] = c[i + 1];
 			}
 
-			// ·ÀÖ¹ËÀÑ­»·
+			// é˜²æ­¢æ­»å¾ªç¯
 			if (result_length == 1)
 				break;
 
@@ -568,7 +568,7 @@ void mul(int *a, int a_len, int *b, int b_len, int *c, int *c_len) {
 
 		temp[0] = carry;
 
-		// ×óÒÆ i  Î»
+		// å·¦ç§» i  ä½
 		temp[result_len + i] = 0;
 
 		add(c, result_len, temp, a_len + 1 + i, c, &result_len);
@@ -579,7 +579,7 @@ void mul(int *a, int a_len, int *b, int b_len, int *c, int *c_len) {
 			c[i] = c[i + 1];
 		}
 
-		// ·ÀÖ¹ËÀÑ­»·
+		// é˜²æ­¢æ­»å¾ªç¯
 		if (result_len == 1)
 			break;
 
@@ -609,20 +609,20 @@ void test03() {
 	char a[1024] = { 0 };
 	char b[1024] = { 0 };
 
-	// ÊäÈëµÚÒ»¸öÊı
-	printf("ÊäÈëa: ");
+	// è¾“å…¥ç¬¬ä¸€ä¸ªæ•°
+	printf("è¾“å…¥a: ");
 	scanf("%[0-9]", a);
 
-	// Ë¢ĞÂ»º³åÇø¡¢
-	// µÚÒ»ÖÖ·½Ê½
+	// åˆ·æ–°ç¼“å†²åŒºã€
+	// ç¬¬ä¸€ç§æ–¹å¼
 	//scanf("%*[^\n]");
 	//scanf("%*c");
-	// µÚ¶şÖÖ·½Ê½
+	// ç¬¬äºŒç§æ–¹å¼
 	char ch;
 	while ((ch = getchar()) != '\n' && ch != EOF);
 
-	// ÊäÈëµÚ¶ş¸öÊı
-	printf("ÊäÈëb: ");
+	// è¾“å…¥ç¬¬äºŒä¸ªæ•°
+	printf("è¾“å…¥b: ");
 	scanf("%[0-9]", b);
 	
 	int a_len = strlen(a);
@@ -641,7 +641,7 @@ void test03() {
 
 	int c[1024] = { 0 };
 
-	// ¼Ó·¨
+	// åŠ æ³•
 	int add_len = 0;
 	add(array_a, a_len, array_b, b_len, c, &add_len);
 	printf("a + b = ");
@@ -650,7 +650,7 @@ void test03() {
 	}
 	printf("\n");
 
-	// ¼õ·¨
+	// å‡æ³•
 	int sub_len = 0;
 	printf("a - b = ");
 	if (sub(array_a, a_len, array_b, b_len, c, &sub_len) == 0)
@@ -660,7 +660,7 @@ void test03() {
 	}
 	printf("\n");
 
-	// ³Ë·¨
+	// ä¹˜æ³•
 	printf("a * b = ");
 	int mul_len = 0;
 	mul(array_a, a_len, array_b, b_len, c, &mul_len);
@@ -668,7 +668,7 @@ void test03() {
 		printf("%d", c[i]);
 	}
 	printf("\n");
-	// ³ı·¨
+	// é™¤æ³•
 	printf("a / b = ");
 	int div_len = 0;
 	div(array_a, a_len, array_b, b_len, c, &div_len);
