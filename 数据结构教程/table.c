@@ -78,13 +78,13 @@ int main(void) {
 
 int initTable(Table *t) {
 	if (t == NULL) {
-		error("±í²»ÄÜÎª¿Õ");
+		error("è¡¨ä¸èƒ½ä¸ºç©º");
 		return -1;
 	}
 	
 	t->head = (int*)malloc(sizeof(int) * TABLE_SIZE);
 	if (t->head == NULL) {
-		error("±íÄÚ¿Õ¼ä·ÖÅäÊ§°Ü");
+		error("è¡¨å†…ç©ºé—´åˆ†é…å¤±è´¥");
 		return -1;
 	}
 
@@ -96,7 +96,7 @@ int initTable(Table *t) {
 
 int findTable(Table *t, int x) {
 	if (t == NULL) {
-		error("±í²»ÄÜÎª¿Õ");
+		error("è¡¨ä¸èƒ½ä¸ºç©º");
 		return -1;
 	}
 
@@ -111,7 +111,7 @@ int findTable(Table *t, int x) {
 
 int alterTable(Table *t, int ele, int newEle) {
 	if (t == NULL) {
-		error("±í²»ÄÜÎª¿Õ");
+		error("è¡¨ä¸èƒ½ä¸ºç©º");
 		return -1;
 	}
 
@@ -127,7 +127,7 @@ int alterTable(Table *t, int ele, int newEle) {
 
 int insertTable(Table *t, int pos, int ele){
 	if (t == NULL) {
-		error("±í²»ÄÜÎª¿Õ");
+		error("è¡¨ä¸èƒ½ä¸ºç©º");
 		return -1;
 	}
 
@@ -143,7 +143,7 @@ int insertTable(Table *t, int pos, int ele){
 		t->head = (int*)realloc(t->head, (t->capacity + TABLE_SIZE) * sizeof(int));
 		
 		if (t->head == NULL) {
-			printf("·ÖÅäÊ§°Ü\n");
+			printf("åˆ†é…å¤±è´¥\n");
 			return -1;
 		}
 
@@ -162,7 +162,7 @@ int insertTable(Table *t, int pos, int ele){
 
 static int push_back(Table *t, int ele) {
 	if (t == NULL) {
-		error("±í²»ÄÜÎª¿Õ");
+		error("è¡¨ä¸èƒ½ä¸ºç©º");
 		return -1;
 	}
 
@@ -171,7 +171,7 @@ static int push_back(Table *t, int ele) {
 
 static int pop_back(Table *t) {
 	if (t == NULL) {
-		error("±í²»ÄÜÎª¿Õ");
+		error("è¡¨ä¸èƒ½ä¸ºç©º");
 		return -1;
 	}
 
@@ -183,7 +183,7 @@ static int pop_back(Table *t) {
 
 static int pop(Table *t) {
 	if (t == NULL) {
-		error("±í²»ÄÜÎª¿Õ");
+		error("è¡¨ä¸èƒ½ä¸ºç©º");
 		return -1;
 	}
 
@@ -192,7 +192,7 @@ static int pop(Table *t) {
 
 static int size(Table *t) {
 	if (t == NULL) {
-		error("±í²»ÄÜÎª¿Õ");
+		error("è¡¨ä¸èƒ½ä¸ºç©º");
 		return -1;
 	}
 
@@ -201,7 +201,7 @@ static int size(Table *t) {
 
 static int capacity(Table *t) {
 	if (t == NULL) {
-		error("±í²»ÄÜÎª¿Õ");
+		error("è¡¨ä¸èƒ½ä¸ºç©º");
 		return -1;
 	}
 

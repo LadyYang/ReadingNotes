@@ -8,7 +8,7 @@
 #define QUEUE_SIZE 1024
 #define STACK_SIZE 1024
 
-// Ë³ĞòÕ» Ë³Ğò¶ÓÁĞ
+// é¡ºåºæ ˆ é¡ºåºé˜Ÿåˆ—
 typedef struct Queue {
 	int data[QUEUE_SIZE];
 	int head;
