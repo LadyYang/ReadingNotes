@@ -200,7 +200,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="第二章 线性表.cpp">
+    <ClCompile Include="第 2 章 线性表.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
