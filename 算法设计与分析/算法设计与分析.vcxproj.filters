@@ -15,11 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="第 2 章 枚举.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="资料\课件\第2章  枚举.ppt">
       <Filter>资源文件</Filter>
     </None>
@@ -44,5 +39,10 @@
     <None Include="资料\课件\第1章  算法及其复杂性分析.ppt">
       <Filter>资源文件</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="第 0 章 大整数运算.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,5 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
-#include <stdio.h>
+
+#include <iostream>
 #include <malloc.h>
 
 /******************* 2.1 线性表及其逻辑结构 ********************
@@ -171,6 +172,6 @@ int main(void)
 	//test2_1();
 	test2_2();
 
-	getch();
+	system("Pause");
 	return 0;
 }

@@ -1,4 +1,4 @@
-#define _CRT_SECURE_NO_WARNINGS
+﻿#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
@@ -27,8 +27,9 @@ void test01() {
 
 
 #define N 1024*10
+
 // 情形二: 当n的规模较大的时候
-void test02() {
+void factorial(int n, int *a, int *len) {
 	// n的规模较大， n!的位数也就相应的大，设计数组a[]存储n!的各位数字， a[1]存储各位数字，a[2]存储十位数字,以此类推。
 	// n确定后 n!的位数 m 也就确定了, 有：
 	/*
@@ -38,10 +39,6 @@ void test02() {
          令s=lg2+lg3+…+lgn，则n!的位数m=[s]+1，即要使用数组a[]的m个元素。
 
 	*/
-	int n;
-	printf("请输入n 求 n! ");
-	scanf("%u", &n);
-
 	//求 n! 的位数m
 	double s = 0;
 	for (int i = 2; i <= n; i++) {
@@ -49,7 +46,9 @@ void test02() {
 	}
 	int m = (int)s + 1;
 
-	int a[N] = { 0 };
+	for (int i = 0; i <= m; i++)
+		a[i] = 0;
+
 	a[1] = 1;
 
 	long long t = 0, g = 0;
@@ -59,7 +58,22 @@ void test02() {
 			a[k] = t % 10;
 			g = t / 10;
 		}
-	printf("m = %d", m);
+	
+	*len = m;
+}
+
+void test02() {
+
+	int n;
+
+	printf("输入正整数n,求n! ");
+	scanf("%d", &n);
+
+	int a[1024] = { 0 };
+	int m = 0;
+
+	// 求阶乘
+	factorial(n, a, &m);
 
 	printf("%d != ", n);
 	for (int k = m; k >= 1; k--) {
@@ -90,164 +104,6 @@ void test02() {
 * 然后调用 add([3,2,4], 3, [0], 1, 0)
 * 递归下去......
 */
-// 方式一
-//void add(int *a, int a_len, int *b, int b_len, int *c, int *c_len) {
-//
-//	// 结果数组的长度
-//	int result_len = 0;
-//
-//	// 保存结果的数组
-//	int result[1024] = { 0 };
-//
-//	// 进位值
-//	int carry = 0;
-//
-//	// 取两数最小的长度
-//	int min = 0;
-//
-//	// 两数相差位数的个数
-//	int distance = abs(a_len - b_len);
-//
-//
-//	// 保存相差位数的数组
-//	int array_dis[1024] = { 0 };
-//	if (a_len > b_len) {
-//		min = b_len;
-//
-//		for (int i = 0; i < distance; i++) {
-//			array_dis[i] = a[i];
-//		}
-//	}
-//	else {
-//		min = a_len;
-//
-//		for (int i = 0; i < distance; i++) {
-//			array_dis[i] = b[i];
-//		}
-//	}
-//
-//	// 实现加法运算
-//	for (int i = 0; i < min; i++) {
-//		result[min - i - 1] = a[a_len - i - 1] + b[b_len - i - 1] + carry;
-//		carry = result[min - i - 1] / 10;
-//		result[min - i - 1] = result[min - i - 1] % 10;
-//	}
-//
-//	if (distance == 0) {
-//
-//		// 判断是否产生进位值
-//		if (carry != 0) {
-//			c[0] = carry;
-//			result_len++;
-//
-//			for (int i = 1; i <= min; i++) {
-//				c[i] = result[i - 1];
-//				result_len++;
-//			}
-//		}
-//		else {
-//			for (int i = 0; i < min; i++) {
-//				c[i] = result[i];
-//				result_len++;
-//			}
-//		}
-//
-//	}
-//	else {
-//		
-//		if (carry != 0) {
-//			int temp_b[1] = { carry };
-//			add(array_dis, distance, temp_b, 1, c, &result_len);
-//		}
-//		else {
-//			for (int i = 0; i < distance; i++) {
-//				c[i] = array_dis[i];
-//				result_len++;
-//			}
-//		}
-//
-//		// current_len 代表当前c[] 数组的长度 !!!
-//		int current_len = result_len;
-//		for (int i = current_len; i < min + current_len; i++) {
-//			c[i] = result[i - current_len];
-//			result_len++;
-//		}
-//	}
-//
-//	*c_len = result_len;
-//}
-
-// 方式二
-//void add(int *a, int a_len, int *b, int b_len, int *c, int *c_len) {
-//	if (a == NULL || b == NULL || c == NULL)
-//		return;
-//
-//	// 相差的位数保存在differ_array 中
-//	int differ_array[1024] = { 0 };
-//	int carry[1] = { 0 };
-//
-//	// 保存相加结果
-//	int result_array[1024] = { 0 };
-//	int result_len = 0;
-//
-//	// 取两数最小的长度
-//	int min = 0;
-//
-//	// 两数相差位数的个数
-//	int distance = abs(a_len - b_len);
-//
-//	if (a_len > b_len) {
-//		min = b_len;
-//
-//		for (int i = 0; i < distance; i++) {
-//			differ_array[i] = a[i];
-//		}
-//	}
-//	else {
-//		min = a_len;
-//
-//		for (int i = 0; i < distance; i++) {
-//			differ_array[i] = b[i];
-//		}
-//	}
-//
-//	// 加法运算
-//	for (int i = 0; i < min; i++) {
-//		result_array[min - i - 1] = a[a_len - i - 1] + b[b_len - i - 1] + carry[0];
-//		carry[0] = result_array[min - i - 1] / 10;
-//		result_array[min - i - 1] = result_array[min - i - 1] % 10;
-//	}
-//
-//	if (distance == 0) {
-//		if (carry[0] == 0) {
-//			for (int i = 0; i < min; i++) {
-//				c[i] = result_array[i];
-//				result_len++;
-//			}
-//		}
-//		else {
-//			c[0] = carry[0];
-//			result_len++;
-//
-//			for (int i = 1; i <= min; i++) {
-//				c[i] = result_array[i - 1];
-//				result_len++;
-//			}
-//		}
-//	}
-//	else {
-//		add(differ_array, distance, carry, 1, c, &result_len);
-//
-//		int current_len = result_len;
-//		for (int i = current_len; i < min + current_len; i++) {
-//			c[i] = result_array[i - current_len];
-//			result_len++;
-//		}
-//	}
-//
-//	if (c_len != NULL)
-//		*c_len = result_len;
-//}
 
 // 使 a, b两数长度相等   用 0 补齐
 void make_len_equal(int *in_a, int a_len, int *in_b, int b_len, int *out_a, int *out_b, int *out_len) {
@@ -327,118 +183,6 @@ void add(int *a, int a_len, int *b, int b_len, int *c, int *c_len) {
 	*c_len = length;
 	return;
 }
-
-// return 0 is minus, return others is positive number
-// 方式一 以相等与不相等来划分
-//int sub(int *a, int a_len, int *b, int b_len, int *c, int *c_len) {
-//	if (a == NULL || b == NULL || c == NULL)
-//		return;
-//
-//	int flag = 1;
-//
-//	// 相差的位数保存在differ_array 中
-//	int differ_array[1024] = { 0 };
-//	int borrow[1] = { 0 };
-//
-//	// 保存相加结果
-//	int result_array[1024] = { 0 };
-//	int result_len = 0;
-//
-//	// 取两数最小的长度
-//	int min = 0;
-//
-//	// 两数相差位数的个数
-//	int distance = abs(a_len - b_len);
-//
-//	if (a_len > b_len) {
-//		min = b_len;
-//
-//		for (int i = 0; i < distance; i++) {
-//			differ_array[i] = a[i];
-//		}
-//	}
-//	else {
-//		min = a_len;
-//		flag = 0;
-//
-//		for (int i = 0; i < distance; i++) {
-//			differ_array[i] = b[i];
-//		}
-//	}
-//
-//	// 减法运算
-//	for (int i = 0; i < min; i++) {
-//		result_array[min - i - 1] = a[a_len - i - 1] - b[b_len - i - 1] - borrow[0];
-//
-//		if (result_array[min - i - 1] < 0) {
-//			borrow[0] = 1;
-//			result_array[min - i - 1] = result_array[min - i - 1] + 10;
-//		}
-//		else {
-//			borrow[0] = 0;
-//		}
-//	}
-//
-//	if (distance == 0) {
-//		if (borrow[0] == 0) {
-//			flag = 1;
-//
-//			for (int i = 0; i < min; i++) {
-//				c[i] = result_array[i];
-//				result_len++;
-//			}
-//
-//			// 将c[0] = 0 这个数一直 去除: a[] = {0, 0, 1} ==>  a[] = {1}
-//			while (c[0] == 0) {
-//				for (int i = 0; i < min - 1; i++) {
-//					c[i] = c[i + 1];
-//				}
-//				if (--result_len == 0)
-//					break;
-//			}
-//			
-//		}
-//		else {
-//			flag = 0;
-//
-//			differ_array[0] = 1;
-//			for (int i = 1; i <= min; i++) {
-//				differ_array[i] = 0;
-//			}
-//			sub(differ_array, min + 1, result_array, min, c, &result_len);
-//		}
-//	}
-//	else {
-//		
-//		if (a_len > b_len) {
-//			sub(differ_array, distance, borrow, 1, c, &result_len);
-//
-//			int current_len = result_len;
-//			for (int i = current_len; i < min + current_len; i++) {
-//				c[i] = result_array[i - current_len];
-//				result_len++;
-//			}
-//		}
-//		else {
-//			flag = 0;
-//			int differ_len = distance;
-//
-//
-//			add(differ_array, distance, borrow, 1, differ_array, &differ_len);
-//
-//			for (int i = differ_len, temp_len = differ_len; i < min + temp_len; i++) {
-//				differ_array[i] = 0;
-//				differ_len++;
-//			}
-//
-//			
-//			sub(differ_array, differ_len, result_array, min, c, &result_len);
-//		}
-//	}
-//
-//	*c_len = result_len;
-//	return flag;
-//}
 
 // Final Version
 /**
@@ -601,6 +345,7 @@ void display(int *a, int len) {
 	printf("\n");
 }
 
+// 任意长度的两个数 + - * / 四则运算
 void test03() {
 	// 
 	/*int a[] = { 1234, 345, 2367, 98 };
@@ -682,11 +427,140 @@ void test03() {
 	free(array_b);
 }
 
+// 1. 输入一个int型正整数，将其转换成八进制整数
+void homework1() {
+	int n;
+
+	printf("输入n：");
+	scanf("%d", &n);
+	printf("十进制数 %d 的八进制表示为：", n);
+
+	int remainder = 0;
+	int result[1024] = { 0 };
+	int i = 0;
+
+	while (n / 8) {
+		result[i++] = n % 8;
+		n /= 8;
+	}
+
+	result[i] = n;
+
+	
+	for (int j = i; j >= 0; j--) {
+		printf("%d", result[j]);
+	}
+	
+	printf("\n");
+
+}
+
+// 2. 统计n!中数字为 0 的个数，及尾部数字 0 的个数
+void homework2() {
+	int n;
+
+	printf("输入正整数n: ");
+	scanf("%d", &n);
+	int a[1024] = { 0 };
+	int m = 0;
+
+	factorial(n, a, &m);
+
+	int num = 0;
+	int tailNum = 0;
+
+	printf("\n%d\n", m);
+
+	for (int i = 1; i <= m; i++) {
+		if (a[i] == 0)
+			num++;
+	}
+
+	for (int i = m; i >= 1; i++) {
+		if (a[i] == 0) {
+			tailNum++;
+		}
+		else {
+			break;
+		}
+	}
+
+	printf("n!中的数字 0 的个数为： %d 尾部数字为 0 的个数为: %d\n", num, tailNum);
+
+}
+
+// 3.输入一个int型十进制正整数，将其分解为质因素的幂的积，要求表示为质因数从小到大顺序排列的乘积形式。例如：90=2*3ˆ2*5
+void homework3() {
+	
+}
+
+// 4.编程删除数组中的重复元素，即数组中相同的元素只保留一个。示例数组： a[]={45,33,23,33,33,88,66,77,66,66}
+void homework4() {
+	char data[1024] = { 0 };
+
+	scanf("%[0-9]", data);
+	int len = strlen(data);
+
+	// 刷新输入缓冲区
+	scanf("%*[^\n]");
+	scanf("%*c");
+
+	int a[1024] = { 0 };
+
+	for (int i = 0; i < len; i++) {
+		a[i] = (int)data[i] - 48;
+	}
+
+	// 先排序
+	for (int i = 0; i < len; i++) {
+		for (int j = i + 1; j < len; j++) {
+			if (a[i] > a[j]) {
+				int temp = a[i];
+				a[i] = a[j];
+				a[j] = temp;
+			}
+		}
+	}
+
+	// eg:  a[]={45,33,23,33,33,88,66,77,66,66}
+	int k = 0;
+	while(k < len-1){
+
+		if (a[k] == a[k + 1]) {
+			for (int i = k; i < len - 1; i++) {
+				a[i] = a[i + 1];
+			}
+			len -= 1;
+		}
+		else {
+			k++;
+		}
+
+	}
+	
+		
+	for (int i = 0; i < len; i++) {
+		printf("%d",  a[i]);
+	}
+	
+
+	printf("\n");
+	
+}
+
+
 int main() {
 
 	//test01();
 	//test02();
-	test03();
+	//test03();
+	
+
+	//homework1();
+	//homework2();
+	//homework3();
+	homework4();
+
 
 	system("pause");
 	return 0;

@@ -115,9 +115,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="第 2 章 枚举.c" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="资料\课件\第1章  算法及其复杂性分析.ppt" />
     <None Include="资料\课件\第2章  枚举.ppt" />
     <None Include="资料\课件\第3章  递推.ppt" />
@@ -126,6 +123,9 @@
     <None Include="资料\课件\第6章  动态规划.ppt" />
     <None Include="资料\课件\第7章  贪心算法.ppt" />
     <None Include="资料\课件\第8章  模拟.ppt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="第 0 章 大整数运算.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
