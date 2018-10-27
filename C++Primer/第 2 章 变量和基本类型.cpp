@@ -112,16 +112,17 @@ void test2_4() {
 
 void test2_5() {
 	int a = 3;
-	int b = 4;
+	int *b = &a;
 	
 	decltype(a) c = a;
-	decltype((b)) d = a;
 
 	++c;
-	++d;
 
 	cout << "c = " << c << endl;
-	cout << "d = " << d << endl;
+
+	using my_int = int *&;
+
+	my_int a = b;
 
 }
 
@@ -136,8 +137,6 @@ int main() {
 	//test2_5();
 
 
-0
-	
 
 
 	system("pause");
