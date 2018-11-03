@@ -107,7 +107,6 @@ void test02() {
 
 // 使 a, b两数长度相等   用 0 补齐
 void make_len_equal(int *in_a, int a_len, int *in_b, int b_len, int *out_a, int *out_b, int *out_len) {
-
 	*out_len = 0;
 
 	int distance = abs(a_len - b_len);
@@ -188,7 +187,7 @@ void add(int *a, int a_len, int *b, int b_len, int *c, int *c_len) {
 /**
 * Description：
 * 以相等数来划分  最满意的！！！
-* 
+*	return 1 代表是正数， return 0 代表是负数
 *	我们将减法的情况分为了两种
 *		（1）两个长度相等的数相减
 *		（2）两个长度不相等的数相减
@@ -335,7 +334,53 @@ void mul(int *a, int a_len, int *b, int b_len, int *c, int *c_len) {
 }
 
 void div(int *a, int a_len, int *b, int b_len, int *c, int *c_len) {
+	if (a == NULL || b == NULL || c == NULL)
+		return;
 
+	// 临时
+	int temp[1024] = { 0 };
+	int temp_len = 0;
+
+	// 保存结果
+	int result[1024] = { 0 };
+	int result_len = 0;
+
+	// 被除数
+	int divi[1024] = { 0 };
+	int divi_len = 0;
+
+	while (1) {
+		divi[divi_len] = a[divi_len];
+		if (sub(divi, divi_len + 1, b, b_len, temp, &temp_len) == 0) {
+			divi_len++;
+
+		}
+		else {
+			divi[divi_len] = 0;
+			divi_len--;
+		}
+
+		int k = 1;
+		int i = 0;
+		for (; i <= 9; i++) {
+			result[k - 1] = i;
+			mul(b, b_len, result, 1, temp, &temp_len);
+
+			if (sub(divi, divi_len + 1, temp, temp_len, temp, &temp_len) == 0) {
+				result[k - 1] = i - 1;
+				mul(b, b_len, result, 1, temp, &temp_len);
+				sub(b, b_len, temp, temp_len, temp, &temp_len);
+
+				break;
+			}
+		}
+
+
+	}
+
+
+
+	
 }
 
 void display(int *a, int len) {
@@ -553,13 +598,13 @@ int main() {
 
 	//test01();
 	//test02();
-	//test03();
+	test03();
 	
 
 	//homework1();
 	//homework2();
 	//homework3();
-	homework4();
+	//homework4();
 
 
 	system("pause");

@@ -86,13 +86,26 @@ void test3_3() {
 	vector<int> ivec(10);
 	vector<string> svec(10);
 
+
+}
+
+void test3_4() {
+	// µü´úÆ÷
+
+	//string s("some string");
+	//for (auto it = s.begin(); it != s.end() && !isspace(*it); ++it)
+	//	*it = toupper(*it);
+	//cout << s << endl;
+
+
 }
 
 int main() {
 
 	//test3_2();
+	//test3_3();
+	test3_4();
 
-	test3_3();
 
 	system("pause");
 	return 0;
