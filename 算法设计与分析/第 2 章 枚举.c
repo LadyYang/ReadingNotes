@@ -169,7 +169,7 @@ void test2_3_1() {
 
 			if (d == b) {
 				k++;
-				pritnf("(%ld, %ld)", a, b);
+				printf("(%ld, %ld)", a, b);
 				break;
 			}
 
@@ -180,11 +180,33 @@ void test2_3_1() {
 	printf("\n %ld 共有以上%\d个解\n", n, k);
 }
 
+// 佩尔方程求解
+void test2_4_1() {
+	double x = 0, y = 0;
+	int n;
+	printf("输入 n: ");
+	scanf("%d", &n);
 
+	while (1) {
+		y++;
+		double t = n * y * y + 1;
+		x = floor(sqrt(t));
+		if (x*x == t) {
+			printf("方程 x^2 - %dy^2 = 1 的基本解为 x = %f, y = %f\n", n, x, y);
+			break;
+		}
+
+		if (x > 1000000000) {
+			printf("没有解\n");
+			return;
+		}
+	}
+}
 /**************************************/
 int main() {
 
-	test2_3_1();
+	//test2_3_1();
+	test2_4_1();
 
 
 	getch();
